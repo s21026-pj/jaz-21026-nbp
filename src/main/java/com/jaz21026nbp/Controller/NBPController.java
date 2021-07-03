@@ -30,7 +30,7 @@ public class NBPController {
                     content = @Content)})
     @GetMapping("/nbp/{currency}/{startDate}/{endDate}")
     @ResponseBody
-    public float returnAverage(@ApiParam(value = "Currency", required = true, example = "GBP") @PathVariable String currency,@ApiParam(value = "Start date", required = true)  @PathVariable String startDate,@ApiParam(value = "End date", required = true)  @PathVariable String endDate){
+    public float returnAverage(@ApiParam(value = "Currency example: GBP", required = true ) @PathVariable String currency,@ApiParam(value = "Start date example: 2021-06-25", required = true)  @PathVariable String startDate,@ApiParam(value = "End date example: 2021-07-01", required = true)  @PathVariable String endDate){
         return nbPservice.returnAverage(startDate,endDate,currency);
     }
 }
